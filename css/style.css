@@ -1,8 +1,6 @@
 /* Body */
 body {
   font-family: "Montserrat", sans-serif;
-  width: 85%;
-  margin: 20px auto;
 }
 * {
   margin: 0;
@@ -11,6 +9,11 @@ body {
 }
 
 /* Header Style */
+header {
+  width: 80%;
+  margin: 20px auto;
+}
+
 header > div {
   display: flex;
   justify-content: space-between;
@@ -48,7 +51,11 @@ header > div {
 .shop_section {
   display: flex;
   align-items: center;
+  /* justify-content: center; */
   gap: 20px;
+  width: 80%;
+  margin: 20px auto;
+  margin-bottom: 80px;
 }
 
 .shop_section > img {
@@ -157,6 +164,84 @@ header > div {
   font-size: 20px;
 }
 
-/* Banner Style */
+.shop_section > .shop_main_content .payment_cards {
+  margin-top: 25px;
+}
 
+.shop_section > .shop_main_content .payment_cards .payment_option {
+  margin-top: 10px;
+}
+
+.shop_section > .shop_main_content .payment_cards .payment_option h5 {
+  margin-top: 10px;
+  color: #5d5d5d;
+  opacity: 90%;
+}
+
+/* Banner Style */
+.banner_section {
+  margin-bottom: 60px;
+  background-image: url("../images/banner-bg.png");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  padding: 200px 0px;
+}
+
+.banner_section .banner_main_section {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 20px;
+}
+
+.banner_section .banner_main_section .heading_text {
+  font-size: 60px;
+  font-weight: 900;
+  color: white;
+}
+
+.banner_section .banner_main_section .sub_heading_text {
+  margin-top: 47px;
+  margin-left: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.banner_section .banner_main_section .banner_list_section .banner_list_1,
+.banner_section .banner_main_section .banner_list_section .banner_list_2 {
+  margin-top: 60px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 18px;
+}
+
+.banner_section
+  .banner_main_section
+  .banner_list_section
+  .banner_list_1
+  .bg_list,
+.banner_section
+  .banner_main_section
+  .banner_list_section
+  .banner_list_2
+  .bg_list {
+  padding: 8px 20px;
+  border-radius: 50%;
+  background-color: #1db469;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 900;
+  width: fit;
+}
+
+.banner_section .banner_main_section .banner_list_section .banner_list_1 h5 {
+  color: white;
+}
+.banner_section .banner_main_section .banner_list_section .banner_list_2 h5 {
+  color: white;
+}
 /* Reviews Style */
