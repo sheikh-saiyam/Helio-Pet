@@ -11,9 +11,9 @@
   width: 400px;
   height: 100%;
   background: #fff;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
+  border-left: 2px solid #c6c6c6;
   padding: 20px;
   overflow-y: auto;
   z-index: 999;
@@ -37,10 +37,12 @@
 }
 
 .cart-drawer .close_button {
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 0.5rem;
+  margin-top: 10px;
+  background-color: none;
   border-radius: 50%;
   border: 2px solid black;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 900;
 }
 
@@ -65,7 +67,7 @@
 }
 
 .cart-drawer .product_details .quantity_selector {
-  padding: 4px 12px;
+  padding: 6px 14px;
   border: 1px solid #c6c6c6;
   display: flex;
   gap: 30px;
@@ -73,6 +75,59 @@
   margin-top: 20px;
   width: fit-content;
   font-size: 22px;
+}
+
+.main_quantity_selector {
+  display: flex;
+  align-items: center;
+  margin-top: -10px;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 0px 5px;
+  color: #232323;
+  width: fit-content;
+}
+
+.quantity-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 10px;
+  color: #232323;
+}
+
+.quantity-btn:hover {
+  background-color: #f4f4f4;
+  transition-duration: 300ms;
+}
+
+.quantity-btn:disabled {
+  color: #262626;
+}
+
+.quantity-display {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 15px;
+}
+
+.trash-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.trash-btn:hover {
+  color: red;
+  transition-duration: 300ms;
 }
 
 .cart-drawer.open {
@@ -84,16 +139,14 @@
   transform: translateX(0);
 }
 
-/* Add shadow overlay to the body and hide scrollbar when cart is open */
 .cart-drawer.open ~ body {
-  overflow: hidden; /* Hide scrollbar */
+  overflow: hidden;
   box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.5);
 }
 
-/* Ensure the body doesn't scroll when cart is open */
 body:has(.cart-drawer.open) {
   overflow: hidden;
-  height: 100vh; /* Prevent scrolling by limiting height */
+  height: 100vh;
 }
 
 .cart-item {
