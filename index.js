@@ -61,7 +61,12 @@ function renderCart() {
   const container = document.getElementById("cartItems");
   container.innerHTML = "";
 
+  let totalPrice = 249.0;
+  let totalComparePrice = 369.0;
 
+  cart.forEach((item) => {
+    totalComparePrice += item.compare_price * item.quantity;
+    totalPrice += item.price * item.quantity;
 
     const div = document.createElement("div");
     div.className = "cart-item";
@@ -81,7 +86,9 @@ function renderCart() {
         <div class="product_details">
           <h6>${item.product_title}</h6>
           <h6>
-            <del style="color:gray;">$${item.compare_price * item.quantity}</del> 
+            <del style="color:gray;">$${
+              item.compare_price * item.quantity
+            }</del> 
             <span style="color:green;">$${item.price * item.quantity}</span>
           </h6>
 
@@ -113,10 +120,8 @@ function renderCart() {
     container.appendChild(div);
   });
 
-  // ✅ Update pricing once after loop ends
   price_1.innerText = `$${totalComparePrice.toFixed(2)}`;
   price_2.innerText = `$${totalPrice.toFixed(2)}`;
 }
-
 
 renderCart();
