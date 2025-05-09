@@ -249,3 +249,25 @@ body:has(.cart-drawer.open) {
   overflow: hidden;
   height: 100vh;
 }
+
+/* mobile responsive */
+@media screen and (max-width: 576px) {
+  /* cart drawer */
+  .cart-drawer {
+    width: 300px;
+  }
+  .cart-drawer .product_container .product_img img {
+    width: 60px;
+    height: 60px;
+  }
+  .cart-drawer .product_container .product_details h6 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .cart-drawer .product_container {
+    gap: 10px;
+  }
+  .checkout_container .total {
+    font-size: 16px;
+  }
+}
