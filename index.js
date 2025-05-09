@@ -4,6 +4,8 @@ let price_1 = document.getElementById("pricing_1");
 let price_2 = document.getElementById("pricing_2");
 let quantity_display = document.getElementById("quantity-display");
 let error_container = document.getElementById("error_container");
+const badge = document.getElementById("cartBadge");
+let totalQuantity = 0;
 
 function openDrawer() {
   document.getElementById("cartDrawer").classList.add("open");
@@ -85,7 +87,10 @@ function updateQuantity(method) {
 
 function deleteItem() {
   localStorage.removeItem("cart");
+
   cart = [];
+  totalQuantity = 0;
+  badge.innerText = totalQuantity;
 
   renderCart();
 }
@@ -94,12 +99,27 @@ function renderCart() {
   const container = document.getElementById("cartItems");
   container.innerHTML = "";
 
+  if (cart.length === 0) {
+    container.innerHTML = `
+      <div class="empty-cart">
+        <h3>Your cart is empty</h3>
+        <div class="empty_cart_button">
+          <button onclick="addToCart()">Add To Cart</button>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
   let totalPrice = 0;
   let totalComparePrice = 0;
 
   cart.forEach((item) => {
     totalComparePrice += item.compare_price * item.quantity;
     totalPrice += item.price * item.quantity;
+
+    totalQuantity = item.quantity;
+    badge.innerText = totalQuantity;
 
     const div = document.createElement("div");
     div.className = "cart-item";

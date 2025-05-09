@@ -65,6 +65,28 @@ header > div {
   margin-top: 4px;
 }
 
+.cart-icon-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: #cf1010;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Shop Details Style */
 .shop_section {
   display: flex;
