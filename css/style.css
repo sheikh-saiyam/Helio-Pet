@@ -22,6 +22,12 @@ header > div {
   margin-bottom: 60px;
 }
 
+.hamburger-menu {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 .div1,
 .div2 {
   display: flex;
@@ -72,6 +78,7 @@ header > div {
   width: 100%;
   margin-top: 10px;
 }
+
 .shop_section .shob_images .shob_grid_images img {
   width: 100%;
 }
@@ -399,16 +406,15 @@ header > div {
   > .user_review_content
   > h1
   > span {
-    font-weight: 900;
-    color: black;
+  font-weight: 900;
+  color: black;
 }
 
 .main_review_section
   > .user_review_section
   > .user_review_content_section
   > .user_review_content
-  > h4
-   {
-    margin-top: 12px;
-    color: #5d5d5d;
+  > h4 {
+  margin-top: 12px;
+  color: #5d5d5d;
 }

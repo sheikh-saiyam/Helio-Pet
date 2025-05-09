@@ -12,3 +12,27 @@
     max-width: 1440px;
   }
 }
+
+/* mobile responsive */
+@media screen and (max-width: 576px) {
+  /* header */
+  .div1 {
+    display: none;
+  }
+  .hamburger-menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+  /* banner */
+  .shop_section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.shop_section > img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+}
