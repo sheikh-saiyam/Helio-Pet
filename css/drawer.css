@@ -20,7 +20,8 @@
 }
 
 .cart-drawer > h1 {
-  font-weight: 900;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -130,8 +131,56 @@
   transition-duration: 300ms;
 }
 
+.parent_checkout_container {
+  position: relative; /* Parent needs relative positioning */
+  min-height: 65vh; /* Ensure it takes full viewport height */
+}
+
+.checkout_container {
+  border-top: 1px solid #eaeaea;
+  position: absolute; /* Position absolutely within parent */
+  bottom: 0; /* Stick to the bottom */
+  left: 0;
+  right: 0; /* Span full width */
+  padding: 10px 0px; /* Optional: Add padding for spacing */
+}
+
+.checkout_container .total {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.total-head {
+  margin-top: 3px;
+}
+
+.total_container {
+  display: flex; /* Optional: Align items horizontally */
+  justify-content: space-between; /* Optional: Space between total and button */
+}
+
+.checkout_button button {
+  background-color: #ffdd00; /* Yellow background */ /* Black text */
+  font-weight: bolder; /* Bold text */
+  font-size: 18px; /* Adjust font size */
+  padding: 10px 20px; /* Adjusted padding for full width */
+  border-top: 3px solid #e11837; /* Red border */
+  border-left: 3px solid #e11837; /* Red border */
+  border-bottom: 10px solid #e11837; /* Red border */
+  border-right: 10px solid #e11837; /* Red border */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  width: 100%; /* Full width */
+  margin-top: 20px;
+}
+
+.checkout_button {
+  display: flex;
+  justify-content: center; 
+}
+
 .cart-drawer.open {
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0;
   position: fixed;
   top: 0;

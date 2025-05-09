@@ -116,6 +116,18 @@ function renderCart() {
           </div>
         </div>
       </div>
+      <!-- Checkout -->
+      <div class="parent_checkout_container">
+        <div class="checkout_container">
+          <div class="total_container">
+            <div class="total total-head">Estimated Total:</div>
+            <div class="total">$249.00 <sup>USD</sup></div>
+          </div>
+          <div class="checkout_button">
+            <button>Checkout</button>
+          </div>
+        </div>
+      </div>
     `;
     container.appendChild(div);
   });
