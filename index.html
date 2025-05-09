@@ -1,318 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/media.css" />
-    <link rel="stylesheet" href="./css/drawer.css" />
-    <!-- Font Setup -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome Setup -->
-    <script
-      src="https://kit.fontawesome.com/97fef78944.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Helio Pet</title>
-  </head>
-  <body>
-    <!-- Main Content Start -->
-    <main>
-      <!-- Header -->
-      <header>
-        <div>
-          <ul class="div1">
-            <li class="flexL">Shop <i class="fas fa-chevron-down"></i></li>
-            <li>Our Story</li>
-            <li class="flexL">Science <i class="fas fa-chevron-down"></i></li>
-            <li>Result</li>
-          </ul>
-          <ul class="div2">
-            <li>ENG <i class="fas fa-chevron-up"></i></li>
-            <li>USD <i class="fas fa-chevron-up"></i></li>
-            <hr style="height: 20px" />
-            <i
-              onclick="openDrawer()"
-              class="fa-solid fa-cart-shopping pointer_button"
-              style="font-size: 20px"
-            ></i>
-          </ul>
-          <!-- Hamburger Menu Icon -->
-          <div class="hamburger-menu">
-            <i class="fas fa-bars"></i>
-          </div>
-        </div>
-      </header>
 
-      <!-- Shop Details -->
-      <section class="shop_section">
-        <!-- image -->
-        <div class="shob_images">
-          <img
-            src="./images/product pic variations.png"
-            alt="product pic variations"
-            class="main_image"
-          />
-          <!-- grid images -->
-          <div class="shob_grid_images">
-            <div><img src="./images/pet (1).png" alt="pet (1) image" /></div>
-            <div><img src="./images/pet (2).png" alt="pet (1) image" /></div>
-            <div><img src="./images/pet (3).png" alt="pet (1) image" /></div>
-            <div><img src="./images/pet (4).png" alt="pet (1) image" /></div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/media.css" />
+  <link rel="stylesheet" href="./css/drawer.css" />
+  <!-- Font Setup -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <!-- Font Awesome Setup -->
+  <script src="https://kit.fontawesome.com/97fef78944.js" crossorigin="anonymous"></script>
+  <title>Helio Pet</title>
+</head>
+
+<body>
+  <!-- Main Content Start -->
+  <main>
+    <!-- Header -->
+    <header>
+      <div>
+        <ul class="div1">
+          <li class="flexL">Shop <i class="fas fa-chevron-down"></i></li>
+          <li>Our Story</li>
+          <li class="flexL">Science <i class="fas fa-chevron-down"></i></li>
+          <li>Result</li>
+        </ul>
+        <ul class="div2">
+          <li>ENG <i class="fas fa-chevron-up"></i></li>
+          <li>USD <i class="fas fa-chevron-up"></i></li>
+          <hr style="height: 20px" />
+          <i onclick="openDrawer()" class="fa-solid fa-cart-shopping pointer_button" style="font-size: 20px"></i>
+        </ul>
+        <!-- Hamburger Menu Icon -->
+        <div class="hamburger-menu">
+          <i class="fas fa-bars"></i>
         </div>
-        <!-- main content -->
-        <div class="shop_main_content">
-          <!-- button and review -->
-          <button class="seller_button">Best Seller</button>
-          <div class="review_span">
-            ⭐⭐⭐⭐ <span class="review_span_1">4.9</span>
-            <span class="review_span_2">(1,021 reviews)</span>
-          </div>
-          <!-- heading text -->
-          <div class="shop_heading_content">
-            <h1 class="heading_text">Helio Pet Device ™</h1>
-          </div>
-          <!-- review section -->
-          <div class="user_review_section">
-            <img src="./images/user_review.png" alt="user_review" />
-            <h4>
-              “We are BOTH so THANKFUL! I purchased this for my 12
-              <br class="mobile-break" />
-              year old Lab mix as he's got mobility issues with the back
-              <br class="mobile-break" />
-              legs. It's been 3 weeks and already a difference!”
-            </h4>
-          </div>
-          <!-- details lists -->
-          <div class="details_list">
-            <h5>
-              <i
-                class="fa-solid fa-arrow-right"
-                style="color: #3385ff; margin-right: 5px"
-              ></i>
-              Reduce aches & pains with 5-minute sessions.
-            </h5>
-            <div style="margin-top: 12px; color: #000000; opacity: 50%">
-              <hr />
-            </div>
-            <h5>
-              <i
-                class="fa-solid fa-arrow-right"
-                style="color: #3385ff; margin-right: 5px"
-              ></i>
-              Cold Laser Therapy helps with Pain, Inflammation & more.
-            </h5>
-            <div style="margin-top: 12px; color: #000000; opacity: 50%">
-              <hr />
-            </div>
-            <h5>
-              <i
-                class="fa-solid fa-arrow-right"
-                style="color: #3385ff; margin-right: 5px"
-              ></i>
-              Professional Grade LLLT with 5 Laser Diodes.
-            </h5>
-          </div>
-          <!-- pricing -->
-          <div class="pricing">
-            <span class="pricing_1" id="pricing_1">$369.00</span>
-            <span class="pricing_2" id="pricing_2">$249.00</span>
-          </div>
-          <!-- add cart -->
-          <div class="add_cart">
-            <button onclick="addToCart()">Add To Cart</button>
-            <!-- quantity selector -->
-             <div class="home_quantity_selector">
-              
-             </div>
-          </div>
-          <!-- payment cards -->
-          <div class="payment_cards">
-            <img src="./images/cards.png" alt="payment cards" />
-            <div class="payment_option">
-              <h5>
-                <i
-                  class="fa-solid fa-shield-halved"
-                  style="color: #5d5d5d; margin-right: 5px"
-                ></i>
-                <span style="color: #3385ff">30 day money back</span> gua rantee
-              </h5>
-              <h5>
-                <i
-                  class="fas fa-cube"
-                  style="color: #5d5d5d; margin-right: 5px"
-                ></i>
-                Expected
-                <span style="color: #3385ff">delivery in 2-4</span> business
-                days
-              </h5>
-            </div>
-          </div>
+      </div>
+    </header>
+
+    <!-- Shop Details -->
+    <section class="shop_section">
+      <!-- image -->
+      <div class="shob_images">
+        <img src="./images/product pic variations.png" alt="product pic variations" class="main_image" />
+        <!-- grid images -->
+        <div class="shob_grid_images">
+          <div><img src="./images/pet (1).png" alt="pet (1) image" /></div>
+          <div><img src="./images/pet (2).png" alt="pet (1) image" /></div>
+          <div><img src="./images/pet (3).png" alt="pet (1) image" /></div>
+          <div><img src="./images/pet (4).png" alt="pet (1) image" /></div>
         </div>
-      </section>
-      <!-- Banner -->
-      <section class="banner_section">
-        <div class="banner_main_section">
-          <div class="banner_text_section">
-            <h1 class="heading_text">
-              Professional Grade, <br />
-              Patented Design.
-            </h1>
-            <h3 class="sub_heading_text">
-              It’s required to have a <span style="color: #1db469"
-                >strong enough output</span
-              >
-              power of 3-10 <br />Joules per cm2 with correct wavelengths (660nm
-              + 850nm).
-            </h3>
-            <div class="banner_list_section">
-              <div class="banner_list_1">
-                <span class="bg_list">1</span>
-                <h5>
-                  The treatment head is 340% bigger so it can finish <br />
-                  a treatment in <span style="color: #1db469">3 minutes</span>,
-                  vs 10-20 minutes.
-                </h5>
-              </div>
-              <div class="banner_list_2">
-                <span class="bg_list">2</span>
-                <h5>
-                  Has <span style="color: #1db469">3 Modes of Power</span> to
-                  accommodate to any area. It <br />
-                  also uses wavelengths 660nm and 850nm.
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div class="banner_image_section"></div>
+      </div>
+      <!-- main content -->
+      <div class="shop_main_content">
+        <!-- button and review -->
+        <button class="seller_button">Best Seller</button>
+        <div class="review_span">
+          ⭐⭐⭐⭐ <span class="review_span_1">4.9</span>
+          <span class="review_span_2">(1,021 reviews)</span>
         </div>
-      </section>
-      <!-- Reviews -->
-      <section class="main_review_section">
-        <h1 class="heading">Verified Reviews.</h1>
-        <!-- Review section -->
-        <div class="review_section">
-          <!-- header -->
-          <div class="rating_summary">
-            <h1>4.8 <sup>⭐⭐⭐⭐⭐</sup></h1>
-            <h3>Based on 480 reviews</h3>
-          </div>
-          <hr style="height: 120px" class="mobile-break" />
-          <!-- ratings -->
-          <div class="rating_distribution">
-            <div class="rating_row">
-              <span style="display: flex; gap: 5px; align-items: center"
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i
-              ></span>
-              <div class="bar_container">
-                <div class="bar" style="width: 88%"></div>
-              </div>
-              <span>(427)</span>
-            </div>
-            <div class="rating_row">
-              <span style="display: flex; gap: 5px; align-items: center"
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ></span>
-              <div class="bar_container">
-                <div class="bar" style="width: 7%"></div>
-              </div>
-              <span>(35)</span>
-            </div>
-            <div class="rating_row">
-              <span style="display: flex; gap: 5px; align-items: center"
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-                ><i class="fa-solid fa-star"></i
-              ></span>
-              <div class="bar_container">
-                <div class="bar" style="width: 2%"></div>
-              </div>
-              <span>(9)</span>
-            </div>
-            <div class="rating_row">
-              <span style="display: flex; gap: 5px; align-items: center"
-                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
-              ></span>
-              <div class="bar_container">
-                <div class="bar" style="width: 1%"></div>
-              </div>
-              <span>(3)</span>
-            </div>
-            <div class="rating_row">
-              <span style="display: flex; gap: 5px; align-items: center"
-                ><i class="fa-solid fa-star"></i
-              ></span>
-              <div class="bar_container">
-                <div class="bar" style="width: 1%"></div>
-              </div>
-              <span>(6)</span>
-            </div>
-          </div>
-          <hr style="height: 120px" class="mobile-break" />
-          <!-- grid images -->
-          <div class="rating_grid_image">
-            <img src="./images/review-image.png" alt="review-image" />
-          </div>
+        <!-- heading text -->
+        <div class="shop_heading_content">
+          <h1 class="heading_text">Helio Pet Device ™</h1>
         </div>
+        <!-- review section -->
         <div class="user_review_section">
-          <div class="tab">
-            <h1><span>Reviews</span> <sup>480</sup></h1>
+          <img src="./images/user_review.png" alt="user_review" />
+          <h4>
+            “We are BOTH so THANKFUL! I purchased this for my 12
+            <br class="mobile-break" />
+            year old Lab mix as he's got mobility issues with the back
+            <br class="mobile-break" />
+            legs. It's been 3 weeks and already a difference!”
+          </h4>
+        </div>
+        <!-- details lists -->
+        <div class="details_list">
+          <h5>
+            <i class="fa-solid fa-arrow-right" style="color: #3385ff; margin-right: 5px"></i>
+            Reduce aches & pains with 5-minute sessions.
+          </h5>
+          <div style="margin-top: 12px; color: #000000; opacity: 50%">
+            <hr />
           </div>
-          <!-- user review -->
-          <div class="user_review_content_section">
-            <!-- user -->
-            <div class="user">
-              <!-- image -->
-              <div><img src="./images/verified-user-review.png" alt="" /></div>
-              <div class="text_content">
-                <h3 style="color: #5d5d5d">
-                  Rizalinda C. <sup style="color: #1bc287">Verified Buyer</sup>
-                </h3>
-                <div class="flag_content">
-                  <img src="./images/bd-flag.png" alt="" />
-                  <h5 style="color: #5d5d5d">Bangladesh</h5>
-                </div>
+          <h5>
+            <i class="fa-solid fa-arrow-right" style="color: #3385ff; margin-right: 5px"></i>
+            Cold Laser Therapy helps with Pain, Inflammation & more.
+          </h5>
+          <div style="margin-top: 12px; color: #000000; opacity: 50%">
+            <hr />
+          </div>
+          <h5>
+            <i class="fa-solid fa-arrow-right" style="color: #3385ff; margin-right: 5px"></i>
+            Professional Grade LLLT with 5 Laser Diodes.
+          </h5>
+        </div>
+        <!-- pricing -->
+        <div class="pricing">
+          <span class="pricing_1" id="pricing_1">$369.00</span>
+          <span class="pricing_2" id="pricing_2">$249.00</span>
+        </div>
+        <!-- add cart -->
+        <div class="add_cart">
+          <button onclick="addToCart()">Add To Cart</button>
+          <!-- quantity selector -->
+          <div class="home_quantity_selector_container">
+            <div class="home_quantity_selector">
+              <div class="home_quantity-container">
+                <button class="home_quantity-btn" onclick="updateQuantity('decrease')"
+                  style="margin-top: -2px;">-</button>
+                <div class="home_quantity-display" id="quantity-display">1</div>
+                <button class="home_quantity-btn" onclick="updateQuantity('increase')">+</button>
               </div>
-            </div>
-            <!-- review -->
-            <div class="user_review_content">
-              <h1>⭐⭐⭐⭐⭐ <span>Excellent Product</span></h1>
-              <h4>It works for me and hubby and my 23 year old chihuahua</h4>
-            </div>
-            <!-- image -->
-            <div style="margin-top: 20px; margin-left: 5px">
-              <img
-                style="max-width: 200px"
-                src="./images/review-bottom-image.png"
-                alt="review-bottom-image"
-              />
             </div>
           </div>
         </div>
-      </section>
-    </main>
-    <!-- Main Content End -->
+        <!-- payment cards -->
+        <div class="payment_cards">
+          <img src="./images/cards.png" alt="payment cards" />
+          <div class="payment_option">
+            <h5>
+              <i class="fa-solid fa-shield-halved" style="color: #5d5d5d; margin-right: 5px"></i>
+              <span style="color: #3385ff">30 day money back</span> guarantee
+            </h5>
+            <h5>
+              <i class="fas fa-cube" style="color: #5d5d5d; margin-right: 5px"></i>
+              Expected
+              <span style="color: #3385ff">delivery in 2-4</span> business
+              days
+            </h5>
+          </div>
+        </div>
+    </section>
+    <!-- Banner -->
+    <section class="banner_section">
+      <div class="banner_main_section">
+        <div class="banner_text_section">
+          <h1 class="heading_text">
+            Professional Grade, <br />
+            Patented Design.
+          </h1>
+          <h3 class="sub_heading_text">
+            It’s required to have a <span style="color: #1db469">strong enough output</span>
+            power of 3-10 <br />Joules per cm2 with correct wavelengths (660nm
+            + 850nm).
+          </h3>
+          <div class="banner_list_section">
+            <div class="banner_list_1">
+              <span class="bg_list">1</span>
+              <h5>
+                The treatment head is 340% bigger so it can finish <br />
+                a treatment in <span style="color: #1db469">3 minutes</span>,
+                vs 10-20 minutes.
+              </h5>
+            </div>
+            <div class="banner_list_2">
+              <span class="bg_list">2</span>
+              <h5>
+                Has <span style="color: #1db469">3 Modes of Power</span> to
+                accommodate to any area. It <br />
+                also uses wavelengths 660nm and 850nm.
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="banner_image_section"></div>
+      </div>
+    </section>
+    <!-- Reviews -->
+    <section class="main_review_section">
+      <h1 class="heading">Verified Reviews.</h1>
+      <!-- Review section -->
+      <div class="review_section">
+        <!-- header -->
+        <div class="rating_summary">
+          <h1>4.8 <sup>⭐⭐⭐⭐⭐</sup></h1>
+          <h3>Based on 480 reviews</h3>
+        </div>
+        <hr style="height: 120px" class="mobile-break" />
+        <!-- ratings -->
+        <div class="rating_distribution">
+          <div class="rating_row">
+            <span style="display: flex; gap: 5px; align-items: center"><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i></span>
+            <div class="bar_container">
+              <div class="bar" style="width: 88%"></div>
+            </div>
+            <span>(427)</span>
+          </div>
+          <div class="rating_row">
+            <span style="display: flex; gap: 5px; align-items: center"><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+            <div class="bar_container">
+              <div class="bar" style="width: 7%"></div>
+            </div>
+            <span>(35)</span>
+          </div>
+          <div class="rating_row">
+            <span style="display: flex; gap: 5px; align-items: center"><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+            <div class="bar_container">
+              <div class="bar" style="width: 2%"></div>
+            </div>
+            <span>(9)</span>
+          </div>
+          <div class="rating_row">
+            <span style="display: flex; gap: 5px; align-items: center"><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i></span>
+            <div class="bar_container">
+              <div class="bar" style="width: 1%"></div>
+            </div>
+            <span>(3)</span>
+          </div>
+          <div class="rating_row">
+            <span style="display: flex; gap: 5px; align-items: center"><i class="fa-solid fa-star"></i></span>
+            <div class="bar_container">
+              <div class="bar" style="width: 1%"></div>
+            </div>
+            <span>(6)</span>
+          </div>
+        </div>
+        <hr style="height: 120px" class="mobile-break" />
+        <!-- grid images -->
+        <div class="rating_grid_image">
+          <img src="./images/review-image.png" alt="review-image" />
+        </div>
+      </div>
+      <div class="user_review_section">
+        <div class="tab">
+          <h1><span>Reviews</span> <sup>480</sup></h1>
+        </div>
+        <!-- user review -->
+        <div class="user_review_content_section">
+          <!-- user -->
+          <div class="user">
+            <!-- image -->
+            <div><img src="./images/verified-user-review.png" alt="" /></div>
+            <div class="text_content">
+              <h3 style="color: #5d5d5d">
+                Rizalinda C. <sup style="color: #1bc287">Verified Buyer</sup>
+              </h3>
+              <div class="flag_content">
+                <img src="./images/bd-flag.png" alt="" />
+                <h5 style="color: #5d5d5d">Bangladesh</h5>
+              </div>
+            </div>
+          </div>
+          <!-- review -->
+          <div class="user_review_content">
+            <h1>⭐⭐⭐⭐⭐ <span>Excellent Product</span></h1>
+            <h4>It works for me and hubby and my 23 year old chihuahua</h4>
+          </div>
+          <!-- image -->
+          <div style="margin-top: 20px; margin-left: 5px">
+            <img style="max-width: 200px" src="./images/review-bottom-image.png" alt="review-bottom-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Main Content End -->
 
-    <!-- Cart Drawer -->
-    <div class="cart-drawer" id="cartDrawer">
-      <h1>
-        Your cart
-        <button
-          class="close_button"
-          onclick="closeDrawer()"
-          style="float: right"
-        >
-          X
-        </button>
-      </h1>
-      <div id="cartItems"></div>
-    </div>
-    <script src="./index.js"></script>
-  </body>
+  <!-- Cart Drawer -->
+  <div class="cart-drawer" id="cartDrawer">
+    <h1>
+      Your cart
+      <button class="close_button" onclick="closeDrawer()" style="float: right">
+        X
+      </button>
+    </h1>
+    <div id="cartItems"></div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
 </html>

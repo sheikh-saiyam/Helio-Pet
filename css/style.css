@@ -170,6 +170,53 @@ header > div {
 
 .shop_section > .shop_main_content .add_cart {
   margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.shop_section
+  > .shop_main_content
+  .add_cart
+  .home_quantity_selector_container
+  .home_quantity_selector {
+  display: flex;
+  gap: 10px; /* Reduced gap for tighter spacing like the image */
+  align-items: center;
+}
+
+.home_quantity-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home_quantity-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #f0f0f5;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #141b4d;
+}
+
+.home_quantity-btn:hover {
+  background-color: #d4d4d6;
+  transition-duration: 300ms;
+}
+
+.home_quantity-display {
+  font-size: 30px;
+  font-weight: bold;
+  min-width: 30px;
+  text-align: center;
+  color: #141b4d;
 }
 
 .shop_section > .shop_main_content .add_cart > button {

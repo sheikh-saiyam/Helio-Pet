@@ -98,12 +98,12 @@ function renderCart() {
               <div class="quantity-container">
                 <button 
                   class="quantity-btn" 
-                  onclick="updateQuantity('decrease', ${item.id})"
+                  onclick="updateQuantity('decrease')"
                 >-</button>
                 <div class="quantity-display">${item.quantity}</div>
                 <button 
                   class="quantity-btn" 
-                  onclick="updateQuantity('increase', ${item.id})"
+                  onclick="updateQuantity('increase')"
                 >+</button>
               </div>
             </div>
