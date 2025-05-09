@@ -3,6 +3,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let price_1 = document.getElementById("pricing_1");
 let price_2 = document.getElementById("pricing_2");
 let quantity_display = document.getElementById("quantity-display");
+let error_container = document.getElementById("error_container");
 
 function openDrawer() {
   document.getElementById("cartDrawer").classList.add("open");
@@ -19,18 +20,21 @@ function updateHomeQuantity(method) {
   if (method === "increase") {
     if (quantity < 10) {
       quantity += 1;
+      error_container.innerText = "";
     } else {
-      return alert("Maximum 10");
+      return (error_container.innerText = "You can’t add more than 10 items!");
     }
   } else {
     if (quantity > 1) {
       quantity -= 1;
+      error_container.innerText = "";
     } else {
-      return alert("Minimum 1");
+      return (error_container.innerText = "You must add at least 1 item!");
     }
   }
-  price_1.innerText = `$ ${369.00 * quantity}`;
-  price_2.innerText = `$ ${249.00 * quantity}`;
+
+  price_1.innerText = `$ ${369.0 * quantity}`;
+  price_2.innerText = `$ ${249.0 * quantity}`;
   quantityElement.innerText = quantity;
 }
 
@@ -61,15 +65,18 @@ function addToCart() {
 
 function updateQuantity(method) {
   if (method === "increase") {
-    if (cart[0].quantity < 10) cart[0].quantity += 1;
-    else {
-      return alert("Maximum 10");
+    if (cart[0].quantity < 10) {
+      cart[0].quantity += 1;
+      error_container.innerText = "";
+    } else {
+      return (error_container.innerText = "You can’t add more than 10 items!");
     }
   } else {
     if (cart[0].quantity > 1) {
       cart[0].quantity -= 1;
+      error_container.innerText = "";
     } else {
-      return alert("Minimum 1");
+      return (error_container.innerText = "You must add at least 1 item!");
     }
   }
   localStorage.setItem("cart", JSON.stringify(cart));
