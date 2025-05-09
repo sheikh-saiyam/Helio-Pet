@@ -2,6 +2,7 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 let price_1 = document.getElementById("pricing_1");
 let price_2 = document.getElementById("pricing_2");
+let quantity_display = document.getElementById("quantity-display");
 
 function openDrawer() {
   document.getElementById("cartDrawer").classList.add("open");
@@ -11,13 +12,36 @@ function closeDrawer() {
   document.getElementById("cartDrawer").classList.remove("open");
 }
 
+function updateHomeQuantity(method) {
+  const quantityElement = document.getElementById("quantity-display");
+  let quantity = parseInt(quantityElement.innerText);
+
+  if (method === "increase") {
+    if (quantity < 10) {
+      quantity += 1;
+    } else {
+      return alert("Maximum 10");
+    }
+  } else {
+    if (quantity > 1) {
+      quantity -= 1;
+    } else {
+      return alert("Minimum 1");
+    }
+  }
+  quantityElement.innerText = quantity;
+}
+
 function addToCart() {
+  const quantityElement = document.getElementById("quantity-display");
+  let quantity = parseInt(quantityElement.innerText);
+
   const cartItem = {
     id: 1,
     product_title: "Helio Pet Device",
     price: 249,
     compare_price: 369,
-    quantity: 1,
+    quantity: quantity ? quantity : 1,
   };
 
   const isItemExitsInCart = cart.find((i) => i.id === 1);
