@@ -1,0 +1,11 @@
+@media screen and (min-width: 1536px) {
+  header {
+    max-width: 1440px;
+  }
+  .shop_section {
+    max-width: 1440px;
+  }
+  .banner_section .banner_main_section {
+    max-width: 1440px;
+  }
+}
