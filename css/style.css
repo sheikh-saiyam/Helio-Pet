@@ -1,0 +1,162 @@
+/* Body */
+body {
+  font-family: "Montserrat", sans-serif;
+  width: 85%;
+  margin: 20px auto;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Style */
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20p;
+  margin-bottom: 60px;
+}
+
+.div1,
+.div2 {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.div1 li,
+.div2 li {
+  color: #141b4d;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.div1 i,
+.div2 i {
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+/* Shop Details Style */
+.shop_section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.shop_section > img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+.shop_section .shob_images .shob_grid_images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  width: 100%;
+  margin-top: 10px;
+}
+.shop_section .shob_images .shob_grid_images img {
+  width: 100%;
+}
+
+.shop_section .shop_main_content > .review_span {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  margin-top: 4px;
+  font-size: 18px;
+}
+
+.shop_section .shop_main_content > .seller_button {
+  background-color: #ed4444;
+  padding: 2px 12px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.shop_section .shop_main_content > .review_span > .review_span_1 {
+  color: #141b4d;
+  font-weight: 500;
+  margin-top: 3px !important;
+}
+
+.shop_section .shop_main_content > .review_span > .review_span_2 {
+  color: #3f474b;
+  font-weight: 400;
+  font-size: 14px !important;
+  margin-top: 8px !important;
+}
+
+.shop_section .shop_heading_content > .heading_text {
+  font-size: 60px;
+  font-weight: bolder;
+  color: #141b4d;
+  margin-top: 10px;
+}
+
+.shop_section .user_review_section {
+  background-color: #f7f7f9;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.shop_section .user_review_section > h4 {
+  color: #3f446c;
+  margin-top: 7px;
+}
+
+.shop_section > .shop_main_content .details_list {
+  margin-top: 20px;
+}
+
+.shop_section > .shop_main_content .details_list > h5 {
+  margin-top: 5px;
+  color: #141b4d;
+  opacity: 90%;
+}
+
+.shop_section > .shop_main_content .pricing {
+  margin-top: 20px;
+}
+
+.shop_section > .shop_main_content .pricing .pricing_1 {
+  font-size: 28px;
+  color: #666;
+  text-decoration: line-through;
+}
+
+.shop_section > .shop_main_content .pricing .pricing_2 {
+  color: #cf1010;
+  font-size: 38px;
+  font-weight: bolder;
+  margin-left: 6px;
+}
+
+.shop_section > .shop_main_content .add_cart {
+  margin-top: 15px;
+}
+
+.shop_section > .shop_main_content .add_cart > button {
+  background-color: #1db469;
+  padding: 14px 60px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+/* Banner Style */
+
+/* Reviews Style */
