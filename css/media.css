@@ -13,7 +13,7 @@
   }
 }
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1300px) {
   header {
     width: 95%;
   }
@@ -29,7 +29,9 @@
     flex-direction: column;
     width: 100%;
   }
-
+  .mobile-break {
+    display: none;
+  }
   .main_image {
     order: 1;
   }
@@ -47,6 +49,16 @@
 
   .shop_grid_images .grid_image:last-child {
     margin-bottom: 0;
+  }
+
+  .main_review_section {
+    width: 95%;
+    padding-bottom: 50px !important;
+  }
+
+  .review_section {
+    flex-direction: column;
+    margin: 15px 0px;
   }
 }
 
