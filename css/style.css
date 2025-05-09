@@ -64,6 +64,11 @@ header > div {
   margin-bottom: 80px;
 }
 
+.shop_section .shob_images {
+  display: flex;
+  flex-direction: column;
+}
+
 .shop_section > img {
   width: 100%;
   height: auto;
@@ -265,6 +270,7 @@ header > div {
   color: #071e47;
   font: 900;
 }
+
 .review_section {
   display: flex;
   gap: 30px;

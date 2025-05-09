@@ -12,6 +12,43 @@
     max-width: 1440px;
   }
 }
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  header {
+    width: 95%;
+  }
+
+  /* banner */
+  .shop_section {
+    flex-direction: column;
+    width: 95%;
+    gap: 20px;
+  }
+
+  .shop_section .shob_images {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main_image {
+    order: 1;
+  }
+
+  .shop_grid_images {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .shop_grid_images .grid_image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .shop_grid_images .grid_image:last-child {
+    margin-bottom: 0;
+  }
+}
 
 /* mobile responsive */
 @media screen and (max-width: 576px) {
@@ -24,15 +61,89 @@
     justify-content: flex-end;
   }
   /* banner */
-  .shop_section {
-    display: flex;
-    flex-direction: column;
+  .shop_section .shop_heading_content > .heading_text {
+    font-size: 32px;
   }
-  
-.shop_section > img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  display: block;
-}
+  .shop_section .user_review_section > h4 {
+    font-size: 14px;
+  }
+  .shop_section .user_review_section > br {
+    display: none;
+  }
+  .mobile-break {
+    display: none;
+  }
+  .shop_section > .shop_main_content .details_list > h5 {
+    font-size: 11px;
+  }
+  .shop_section > .shop_main_content .add_cart > button {
+    width: 100%;
+  }
+  .shop_section > .shop_main_content .payment_cards .payment_option h5 {
+    font-size: 11px;
+  }
+  /* banner */
+  .banner_section {
+    margin-bottom: 40px;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.8)
+      ),
+      url("../images/mobile-banner-bg.png");
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    padding: 200px 0px;
+  }
+  .banner_section .banner_main_section {
+    width: 95%;
+  }
+  .banner_section .banner_main_section .heading_text {
+    font-size: 32px;
+  }
+  .banner_section .banner_main_section .sub_heading_text {
+    font-size: 14px;
+  }
+  .banner_section .banner_main_section .banner_list_section .banner_list_1 h5,
+  .banner_section .banner_main_section .banner_list_section .banner_list_2 h5 {
+    font-size: 14px;
+  }
+  /* reviews */
+  .main_review_section {
+    width: 95%;
+    padding-bottom: 50px !important;
+  }
+  .main_review_section .heading {
+    font-size: 22px;
+  }
+  .review_section {
+    flex-direction: column;
+    margin: 15px 0px;
+  }
+  .main_review_section > .user_review_section > .user_review_content_section {
+    margin-top: 20px !important;
+  }
+  .main_review_section
+    > .user_review_section
+    > .user_review_content_section
+    > .user_review_content
+    > h1 {
+    font-size: 16px;
+  }
+  .main_review_section
+    > .user_review_section
+    > .user_review_content_section
+    > .user_review_content
+    > h1
+    > span {
+    font-size: 16px;
+  }
+  .main_review_section
+    > .user_review_section
+    > .user_review_content_section
+    > .user_review_content
+    > h4 {
+    font-size: 12px;
+  }
 }
