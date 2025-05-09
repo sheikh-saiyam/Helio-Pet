@@ -29,6 +29,8 @@ function updateHomeQuantity(method) {
       return alert("Minimum 1");
     }
   }
+  price_1.innerText = `$ ${369.00 * quantity}`;
+  price_2.innerText = `$ ${249.00 * quantity}`;
   quantityElement.innerText = quantity;
 }
 
