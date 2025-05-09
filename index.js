@@ -5,7 +5,6 @@ let price_2 = document.getElementById("pricing_2");
 let quantity_display = document.getElementById("quantity-display");
 let error_container = document.getElementById("error_container");
 const badge = document.getElementById("cartBadge");
-let totalQuantity = 0;
 
 function openDrawer() {
   document.getElementById("cartDrawer").classList.add("open");
@@ -15,24 +14,8 @@ function closeDrawer() {
   document.getElementById("cartDrawer").classList.remove("open");
 }
 
-// closeDrawer
-document.addEventListener("click", function (event) {
-  const drawer = document.getElementById("cartDrawer");
-  const isDrawerOpen = drawer.classList.contains("open");
-
-  if (!isDrawerOpen) return;
-
-  const clickedInsideDrawer = drawer.contains(event.target);
-  const clickedCartIcon = event.target.closest(".cart-icon-container");
-
-  if (!clickedInsideDrawer && !clickedCartIcon) {
-    closeDrawer();
-  }
-});
-
 function updateHomeQuantity(method) {
-  const quantityElement = document.getElementById("quantity-display");
-  let quantity = parseInt(quantityElement.innerText);
+  let quantity = parseInt(quantity_display.innerText);
 
   if (method === "increase") {
     if (quantity < 10) {
@@ -50,27 +33,27 @@ function updateHomeQuantity(method) {
     }
   }
 
-  price_1.innerText = `$ ${369.0 * quantity}`;
-  price_2.innerText = `$ ${249.0 * quantity}`;
-  quantityElement.innerText = quantity;
+  quantity_display.innerText = quantity;
+  price_1.innerText = `$ ${(369.0 * quantity).toFixed(2)}`;
+  price_2.innerText = `$ ${(249.0 * quantity).toFixed(2)}`;
 }
 
 function addToCart() {
-  const quantityElement = document.getElementById("quantity-display");
-  let quantity = parseInt(quantityElement.innerText);
+  let quantity = parseInt(quantity_display.innerText);
 
   const cartItem = {
     id: 1,
     product_title: "Helio Pet Device",
     price: 249,
     compare_price: 369,
-    quantity: quantity ? quantity : 1,
+    quantity: quantity,
   };
 
-  const isItemExitsInCart = cart.find((i) => i.id === 1);
+  const isItemExists = cart.find((i) => i.id === cartItem.id);
 
-  if (isItemExitsInCart) {
-    if (isItemExitsInCart.quantity < 10) isItemExitsInCart.quantity += 1;
+  if (isItemExists) {
+    isItemExists.quantity += quantity;
+    if (isItemExists.quantity > 10) isItemExists.quantity = 10;
   } else {
     cart.push(cartItem);
   }
@@ -80,41 +63,43 @@ function addToCart() {
   renderCart();
 }
 
-function updateQuantity(method) {
+function updateQuantity(id, method) {
+  const item = cart.find((i) => i.id === id);
+  if (!item) return;
+
   if (method === "increase") {
-    if (cart[0].quantity < 10) {
-      cart[0].quantity += 1;
+    if (item.quantity < 10) {
+      item.quantity += 1;
       error_container.innerText = "";
     } else {
       return (error_container.innerText = "You can’t add more than 10 items!");
     }
   } else {
-    if (cart[0].quantity > 1) {
-      cart[0].quantity -= 1;
+    if (item.quantity > 1) {
+      item.quantity -= 1;
       error_container.innerText = "";
     } else {
       return (error_container.innerText = "You must add at least 1 item!");
     }
   }
+
   localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
 }
 
-function deleteItem() {
-  localStorage.removeItem("cart");
-
-  cart = [];
-  totalQuantity = 0;
-  badge.innerText = totalQuantity;
-  price_1.innerText = `$ 369.00`;
-  price_2.innerText = `$ 249.00`;
-
+function deleteItem(id) {
+  cart = cart.filter((item) => item.id !== id);
+  localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
 }
 
 function renderCart() {
   const container = document.getElementById("cartItems");
   container.innerHTML = "";
+
+  let totalComparePrice = 0;
+  let totalPrice = 0;
+  let totalQuantity = 0;
 
   if (cart.length === 0) {
     container.innerHTML = `
@@ -125,90 +110,83 @@ function renderCart() {
         </div>
       </div>
     `;
+    badge.innerText = "0";
+    price_1.innerText = `$369.00`;
+    price_2.innerText = `$249.00`;
     return;
   }
-
-  let totalPrice = 0;
-  let totalComparePrice = 0;
 
   cart.forEach((item) => {
     totalComparePrice += item.compare_price * item.quantity;
     totalPrice += item.price * item.quantity;
-
-    totalQuantity = item.quantity;
-    badge.innerText = totalQuantity;
+    totalQuantity += item.quantity;
 
     const div = document.createElement("div");
     div.className = "cart-item";
-    div.innerHTML = `   
-    <!-- header -->
-    <div class="cart_header">
-      <h4>Product</h4>
-      <h4>Total</h4>
-    </div>
-      <!-- products -->
+    div.innerHTML = `
+      <div class="cart_header">
+        <h4>Product</h4>
+        <h4>Total</h4>
+      </div>
+
       <div class="product_container">
-        <!-- image -->
         <div class="product_img">
           <img src="./images/product pic variations.png" alt="product image" />
         </div>
-        <!-- content -->
+
         <div class="product_details">
           <h6>${item.product_title}</h6>
           <h6>
-            <del style="color:gray;">$${
+            <del style="color:gray;">$${(
               item.compare_price * item.quantity
-            }</del> 
-            <span style="color:green;">$${item.price * item.quantity}</span>
+            ).toFixed(2)}</del> 
+            <span style="color:green;">$${(item.price * item.quantity).toFixed(
+              2
+            )}</span>
           </h6>
 
-          <!-- quantity selector -->
           <div class="main_quantity_selector">
             <div class="quantity_selector">
               <div class="quantity-container">
-                <button 
-                  class="quantity-btn" 
-                  onclick="updateQuantity('decrease')"
-                >-</button>
+                <button class="quantity-btn" onclick="updateQuantity(${
+                  item.id
+                }, 'decrease')">-</button>
                 <div class="quantity-display">${item.quantity}</div>
-                <button 
-                  class="quantity-btn" 
-                  onclick="updateQuantity('increase')"
-                >+</button>
+                <button class="quantity-btn" onclick="updateQuantity(${
+                  item.id
+                }, 'increase')">+</button>
               </div>
             </div>
-            <button 
-              class="trash-btn" 
-              onclick="deleteItem(${item.id})"
-            >
+
+            <button class="trash-btn" onclick="deleteItem(${item.id})">
               <i class="fas fa-trash"></i>
             </button>
           </div>
         </div>
       </div>
-      <!-- Checkout -->
-      <div class="parent_checkout_container">
-        <div class="checkout_container">
-          <div class="total_container">
-            <div class="total total-head">Estimated Total:</div>
-            <div class="total">$249.00 <sup>USD</sup></div>
-          </div>
-          <div class="checkout_button">
-            <button>Checkout</button>
-          </div>
-        </div>
-      </div>
     `;
+
     container.appendChild(div);
   });
 
-  if (cart.length === 0) {
-    price_1.innerText = `$ 369.00`;
-    price_2.innerText = `$ 249.00`;
-  } else {
-    price_1.innerText = `$ ${totalComparePrice.toFixed(2)}`;
-    price_2.innerText = `$ ${totalPrice.toFixed(2)}`;
-  }
+  price_1.innerText = `$ ${totalComparePrice.toFixed(2)}`;
+  price_2.innerText = `$ ${totalPrice.toFixed(2)}`;
+  badge.innerText = totalQuantity;
+
+  const totalHTML = `
+    <div class="parent_checkout_container">
+      <div class="checkout_container">
+        <div class="total_container">
+          <div class="total total-head">Estimated Total:</div>
+          <div class="total">$${totalPrice.toFixed(2)} <sup>USD</sup></div>
+        </div>
+        <div class="checkout_button">
+          <button>Checkout</button>
+        </div>
+      </div>
+    </div>
+  `;
+  container.innerHTML += totalHTML;
 }
 
 renderCart();
