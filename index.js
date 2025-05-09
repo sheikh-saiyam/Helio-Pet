@@ -61,8 +61,8 @@ function renderCart() {
   const container = document.getElementById("cartItems");
   container.innerHTML = "";
 
-  let totalPrice = 249.0;
-  let totalComparePrice = 369.0;
+  let totalPrice = 0;
+  let totalComparePrice = 0;
 
   cart.forEach((item) => {
     totalComparePrice += item.compare_price * item.quantity;
@@ -71,11 +71,11 @@ function renderCart() {
     const div = document.createElement("div");
     div.className = "cart-item";
     div.innerHTML = `   
-      <!-- header -->
-      <div class="cart_header">
-        <h4>Product</h4>
-        <h4>Total</h4>
-      </div>
+    <!-- header -->
+    <div class="cart_header">
+      <h4>Product</h4>
+      <h4>Total</h4>
+    </div>
       <!-- products -->
       <div class="product_container">
         <!-- image -->
@@ -120,8 +120,13 @@ function renderCart() {
     container.appendChild(div);
   });
 
-  price_1.innerText = `$${totalComparePrice.toFixed(2)}`;
-  price_2.innerText = `$${totalPrice.toFixed(2)}`;
+  if (cart.length === 0) {
+    price_1.innerText = `$ 369.00`;
+    price_2.innerText = `$ 249.00`;
+  } else {
+    price_1.innerText = `$ ${totalComparePrice.toFixed(2)}`;
+    price_2.innerText = `$ ${totalPrice.toFixed(2)}`;
+  }
 }
 
 renderCart();
