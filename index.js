@@ -15,6 +15,21 @@ function closeDrawer() {
   document.getElementById("cartDrawer").classList.remove("open");
 }
 
+// closeDrawer
+document.addEventListener("click", function (event) {
+  const drawer = document.getElementById("cartDrawer");
+  const isDrawerOpen = drawer.classList.contains("open");
+
+  if (!isDrawerOpen) return;
+
+  const clickedInsideDrawer = drawer.contains(event.target);
+  const clickedCartIcon = event.target.closest(".cart-icon-container");
+
+  if (!clickedInsideDrawer && !clickedCartIcon) {
+    closeDrawer();
+  }
+});
+
 function updateHomeQuantity(method) {
   const quantityElement = document.getElementById("quantity-display");
   let quantity = parseInt(quantityElement.innerText);
@@ -91,6 +106,8 @@ function deleteItem() {
   cart = [];
   totalQuantity = 0;
   badge.innerText = totalQuantity;
+  price_1.innerText = `$ 369.00`;
+  price_2.innerText = `$ 249.00`;
 
   renderCart();
 }
